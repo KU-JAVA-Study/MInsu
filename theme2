@@ -1,0 +1,410 @@
+package javastudy;
+
+import java.util.Scanner;
+
+public class theme2 {
+
+	public static Scanner scan = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		
+//		num1();
+//		num2();
+//		num3();
+//		num4();
+//		num5();
+//		num6();
+//		num7();
+//		num8();
+//		num9();
+//		num10();
+//		num11();
+//		num12();
+	}
+
+
+
+
+
+
+
+
+	private static void num12() {
+		System.out.print("연산 >> ");
+		
+		double x = scan.nextDouble();
+		String H = scan.next();
+		double y = scan.nextDouble();
+		
+		System.out.printf("%f %s %f의 계산 결과는 ",x,H,y);
+		
+		double result;
+		
+		switch(H) {
+		case "+":
+			result = x+y;
+			break;
+			
+		case "-":
+			result = x-y;
+			break;
+			
+		case "*":
+			result = x*y;
+			break;
+			
+		case "/":
+			result = x/y;
+			break;
+			
+		default:
+			result =0;
+		}
+		
+		System.out.printf("%f %s %f의 계산 결과는 %f",x,H,y,result);
+
+	}
+
+
+
+
+
+
+
+
+	private static void num11() {
+		// TODO Auto-generated method stub
+		System.out.print("달을 입력하세요(1~12) >> ");
+		int dal = scan.nextInt();
+		switch(dal) {
+		case 12:
+		case 1:
+		case 2:
+			System.out.println("겨울");
+			break;
+		case 3:
+		case 4:
+		case 5:
+			System.out.println("봄");
+			break;
+		case 6:
+		case 7:
+		case 8:
+			System.out.println("여름");
+			break;
+		case 9:
+		case 10:
+		case 11:
+			System.out.println("가을");
+			break;
+		
+		}
+	}
+
+
+
+
+
+
+
+
+	private static void num1() {
+		System.out.print("원화를 입력하세요(단위 원)>> ");
+		int money = scan.nextInt();
+		double dollar = money/1100.0;
+		System.out.printf("%d원은 $%.2f입니다.", money, dollar);
+		
+		scan.close();		
+	}
+	
+	private static void num2() {
+		System.out.print("2자리수 정수 입력(10~99) >> ");
+		int user = scan.nextInt();
+		
+		if((user >=10)||(user<=99)) {
+			int ten = user / 10;
+			int one = user % 10;
+			
+			if(ten == one) {
+				System.out.println("Yes! 10의 자리와 1의 자리가 같습니다.");
+			}
+			else {
+				System.out.println("No! 10의 자리와 1의 자리가 다릅니다.");
+			}
+		}
+		else {
+			System.out.println("수를 확인해 주십시오");
+		}
+	}
+	
+	
+	private static void num3() {
+
+		System.out.print("금액을 입력하시오 >>");
+		int user = scan.nextInt();
+		
+	
+		
+		System.out.printf("오만원권 %d매\n", user/50000);
+		user = user - user/50000 * 50000;
+		
+		System.out.printf("만원권 %d매\n", user/10000);
+		user = user - user/10000 * 10000;
+		
+		System.out.printf("천원권 %d매\n", user/1000);
+		user = user - user/1000 * 1000;
+		
+		System.out.printf("백원 %d매\n", user/100);
+		user = user - user/100 * 100;
+		
+		System.out.printf("오십원 %d매\n", user/50);
+		user = user - user/50 * 50;
+		
+		System.out.printf("십원 %d매\n", user/10);
+		user = user - user/10 * 10;
+		
+		System.out.printf("일원 %d매\n", user);
+	}
+	
+	
+
+
+	private static void num4() {
+		System.out.println("정수 3개 입력 >> ");
+		int u1 = scan.nextInt();
+		int u2 = scan.nextInt();
+		int u3 = scan.nextInt();
+		
+		int mid = 0;
+		
+		if(u1>u2) {
+			if(u2>u3) {
+				mid = u2;
+			}
+			
+			else {
+				if(u1>u3) {
+					mid = u3;
+				}
+				else {
+					mid = u1;
+				}
+			}
+				
+		}
+		
+		else {
+			int tmp;
+			tmp = u1;
+			u1 = u2;
+			u2 = tmp;
+			
+			if(u2>u3) {
+				mid = u2;
+			}
+			
+			else {
+				if(u1>u3) {
+					mid = u3;
+				}
+				else {
+					mid = u1;
+				}
+			}
+		}
+		
+		System.out.println("중간 값은 "+mid);
+
+	}
+	
+	
+	private static void num5() {
+		System.out.print("정수 3개를 입력하시오 >> ");
+		int u1 = scan.nextInt();
+		int u2 = scan.nextInt();
+		int u3 = scan.nextInt();
+		
+		int max;
+		
+		if(u1>=u2) {
+			if(u2>=u3) {
+				max = u1;
+			}
+			else {
+				if(u1>=u3) {
+					max = u1;
+				}
+				else
+					max = u3;
+			}
+		}
+		else {
+			int tmp;
+			tmp = u1;
+			u1 = u2;
+			u2 = tmp;
+			
+			if(u2>=u3) {
+				max = u1;
+			}
+			else {
+				if(u1>=u3) {
+					max = u1;
+				}
+				else
+					max = u3;
+			}
+		}
+		
+		if((max*2)<(u1+u2+u3)) {
+			System.out.println("삼각형이됩니다");
+
+		}
+		else {
+			System.out.println("삼각형이 안됩니다");
+		}
+		
+	}
+
+	private static void num6() {
+		System.out.print("1~99 사이 정수 입력(1~99) >> ");
+		int user = scan.nextInt();
+		int clap=0;
+
+		if((user >=1)||(user<=99)) {
+			int ten = user / 10;
+			int one = user % 10;
+			
+			
+			if((ten%3)==0)
+				if(ten!=0)
+					clap++;
+			
+			if((one%3)==0)
+				if(one!=0)
+					clap++;
+			
+			
+		}
+		
+		switch(clap) {
+		case 0:
+			System.out.println("--");
+			break;
+		case 1:
+			System.out.println("박수짝");
+			break;
+		case 2:
+			System.out.println("박수짝짝");
+			break;
+		}
+		
+	}
+
+	
+	private static void num7() {
+		System.out.print("점 (x,y)의 좌표를 입력하시오 >> ");
+		int u1 = scan.nextInt();
+		int u2 = scan.nextInt();	
+		
+		if((u1>100)&&(u1<200))
+			if((u2>100)&&(u2<200))
+				System.out.printf("(%d, %d)는 사각형 안에 있습니다.", u1, u2);
+	}
+	
+	
+
+
+
+	private static void num8() {
+		System.out.print("점 (x,y)의 좌표를 입력하시오 >> ");
+		int u1 = scan.nextInt();
+		int u2 = scan.nextInt();
+		
+		System.out.print("점 (x,y)의 좌표를 입력하시오 >> ");
+		int u3 = scan.nextInt();
+		int u4 = scan.nextInt();
+		
+		if((u1>100)&&(u1<200))
+			if((u2>100)&&(u2<200)) {
+				System.out.println("충돌");
+				return;
+			}
+		
+		if((u3>100)&&(u3<200))
+			if((u4>100)&&(u4<200)) {
+				System.out.println("충돌");
+				return;
+			}
+		
+		if((100>u1)&&(100<u3))
+			if((100>u2)&&(100<u4)) {
+				System.out.println("충돌");
+				return;
+			}
+		
+		if((200>u1)&&(200<u3))
+			if((200>u2)&&(200<u4)) {
+				System.out.println("충돌");
+				return;
+			}
+		
+		System.out.println("충돌 안해");
+		
+		
+	}
+
+	
+	private static void num9() {
+		System.out.print("원의 중심과 반지름 입력 >> ");
+		
+		double x1 = scan.nextDouble();
+		double y1 = scan.nextDouble();
+		double r = scan.nextDouble();
+		
+		System.out.print("점 입력 >>");
+		double x2 = scan.nextDouble();
+		double y2 = scan.nextDouble();
+		
+		double d = (x1-x2)*(x1-x2)+(y1-y2)*(y1-y2);
+		
+		if(r*r>=d) {
+			System.out.println("점 (%f, %f)는 원 안에 있다.");
+		}
+		else {
+			System.out.println("점 (%f, %f)는 원 안에 없다.");
+
+		}
+			
+		
+	}
+
+
+
+	private static void num10() {
+		// TODO Auto-generated method stub
+		System.out.print("첫번째 원의 중심과 반지름 입력 >> ");
+		
+		double x1 = scan.nextDouble();
+		double y1 = scan.nextDouble();
+		double r1 = scan.nextDouble();
+		
+		System.out.print("두번째 원의 중심과 반지름 입력 >> ");
+		
+		double x2 = scan.nextDouble();
+		double y2 = scan.nextDouble();
+		double r2 = scan.nextDouble();
+		
+		double d = (x1-x2)*(x1-x2)+(y1-y2)*(y1-y2);
+		
+		if((r1*r1+r2*r2)>= d) {
+			System.out.println("두 원은 만난다");
+		}
+		else {
+			System.out.println("안만나");
+		}
+		
+	}
+
+
+}
